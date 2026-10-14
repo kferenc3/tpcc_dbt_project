@@ -1,0 +1,22 @@
+name: tpcc_dbt
+version: "1.0.0"
+config-version: 2
+
+profile: tpcc_dbt
+
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Where Fivetran lands the Oracle tables in Databricks.
+  # Override these to match your connector (see README).
+  tpcc_source_schema: tpcc_tpcc
+
+models:
+  tpcc_dbt:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

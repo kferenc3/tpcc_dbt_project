@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: customer_order_summary
+    columns:
+      - name: customer_key
+        tests: [unique, not_null]
+  - name: item_sales_summary
+    columns:
+      - name: item_id
+        tests: [unique, not_null]

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: tpcc
+    description: TPC-C tables replicated from Oracle (service ora19c) by Fivetran.
+    schema: "{{ var('tpcc_source_schema') }}"
+    tables:
+      - name: customer
+      - name: orders
+      - name: order_line
+      - name: item

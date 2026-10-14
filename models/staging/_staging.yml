@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_tpcc__customer
+    columns:
+      - name: customer_key
+        tests: [unique, not_null]
+  - name: stg_tpcc__orders
+    columns:
+      - name: order_key
+        tests: [unique, not_null]
+  - name: stg_tpcc__order_line
+    columns:
+      - name: order_line_key
+        tests: [unique, not_null]
+  - name: stg_tpcc__item
+    columns:
+      - name: item_id
+        tests: [unique, not_null]
